@@ -5,6 +5,7 @@ import Section1 from './components/Section1';
 import Section2 from './components/Section2';
 import Section3 from './components/Section3';
 import Footer from './components/Footer';
+import ContactFloat from './components/ContactFloat';
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
       <Section2 />
       <Section3 />
       <Footer />
+
+      {/* Botón flotante siempre visible */}
+      <ContactFloat />
     </div>
   );
 }
