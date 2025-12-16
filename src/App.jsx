@@ -1,25 +1,36 @@
 // src/App.jsx
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
-import Hero from './components/Hero';
-import Section1 from './components/Section1';
-import Section2 from './components/Section2';
-import Section3 from './components/Section3';
 import Footer from './components/Footer';
 import ContactFloat from './components/ContactFloat';
+import Home from './pages/Home';
+import Services from './pages/Services';
+import KnowMore from './pages/KnowMore';
+import Trip1 from './pages/Trip1';
+import Trip2 from './pages/Trip2';
+import Trip3 from './pages/Trip3';
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-50">
-      <Header />
-      <Hero />
-      <Section1 />
-      <Section2 />
-      <Section3 />
-      <Footer />
+    <Router>
+      <div className="flex flex-col min-h-screen bg-gray-50">
+        <Header />
 
-      {/* Botón flotante siempre visible */}
-      <ContactFloat />
-    </div>
+        <main className="grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/servicios" element={<Services />} />
+            <Route path="/conoce-mas" element={<KnowMore />} />
+            <Route path="/conoce-mas/trip1" element={<Trip1 />} />
+            <Route path="/conoce-mas/trip2" element={<Trip2 />} />
+            <Route path="/conoce-mas/trip3" element={<Trip3 />} />
+          </Routes>
+        </main>
+
+        <Footer />
+        <ContactFloat /> {/* Botónes */}
+      </div>
+    </Router>
   );
 }
 
